@@ -147,7 +147,7 @@ caption = (
 )
     
 # Start command handler
-@bot.on_message(filters.command(["start"]))
+@bot.on_message(filters.command(["Start"]))
 async def start_command(bot: Client, message: Message):
     await bot.send_photo(chat_id=message.chat.id, photo=random_image_url, caption=caption, reply_markup=keyboard)
     
@@ -190,7 +190,7 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["Upload","upload2"]))
+@bot.on_message(filters.command(["upload","upload2"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
